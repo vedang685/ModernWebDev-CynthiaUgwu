@@ -56,7 +56,7 @@ Sheryian Coding School: A heartfelt thank you for providing the foundational kno
 ## Get in Touch
 Connect with me on LinkedIn: <a>https://www.linkedin.com/in/vedang685/</a>
 
-License
+## License
 This project is licensed under the <U>MIT License<U>.
 
 We're excited to share this remarkable journey of innovation and craftsmanship with you. Let's create digital experiences that leave a lasting impact!
