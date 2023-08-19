@@ -1,5 +1,7 @@
 # Cynthia Ugwu - Modern Web Dev Project By VEDANG 🚀
-Modern Web Dev Project: Seamless Interactive Website
+
+Seamless Interactive Website
+
 Welcome to the repository for cutting-edge Modern Web Dev project! This project showcases the fusion of pure HTML, CSS, and JavaScript with the enchanting capabilities of GSAP and Locomotive Scroll. Get ready to embark on an immersive digital journey that seamlessly blends innovation and creativity.
 
 ## Features:
@@ -28,22 +30,23 @@ Clone this repository to your local machine using:
 
 ```bash
 Copy code
-git clone https://github.com/your-username/modern-web-dev-project.git
+git clone https://github.com/vedang685/ModernWebDev-CynthiaUgwu
 ```
 Open the project directory in your preferred code editor.
 
 Explore the project's structure, including:
 
-index.html: The main HTML file containing the landing page and smooth scrolling setup.
+
+<B>index.html:</B> The main HTML file containing the landing page and smooth scrolling setup.
 
 
-styles.css: The CSS file responsible for the visual styling and animations.
+<B>styles.css:</B> The CSS file responsible for the visual styling and animations.
 
 
-script.js: The JavaScript file handling interactive features, including the menu and animations.
+<B>script.js:</B> The JavaScript file handling interactive features, including the menu and animations.
 
 
-images/: Directory containing images used in the project.
+<B>images/:</B> Directory containing images used in the project.
 
 
 Customize and extend the project as desired, leveraging the power of HTML, CSS, JavaScript, GSAP, and Locomotive Scroll.
@@ -58,5 +61,3 @@ Connect with me on LinkedIn: <a>https://www.linkedin.com/in/vedang685/</a>
 
 ## License
 This project is licensed under the <U>MIT License<U>.
-
-We're excited to share this remarkable journey of innovation and craftsmanship with you. Let's create digital experiences that leave a lasting impact!
