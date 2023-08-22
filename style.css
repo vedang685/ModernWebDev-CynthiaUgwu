@@ -272,12 +272,6 @@ html,body{
     transform: translateY(115%);
 }
 
-.elements:hover h1 {
-    transform: translateX(20px);
-    opacity: 0.3;
-    transition: transform 0.3s ease-in, opacity 0.3s ease-in;
-}
-
 #menuButton{
     cursor: pointer;
     display: inline-block;

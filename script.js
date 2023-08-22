@@ -137,3 +137,22 @@ document.addEventListener("DOMContentLoaded", function() {
 skewcircle();
 circleMouseFollower();
 landingPage();
+
+var element = document.getElementsByClassName("elements")
+Array.from(element).forEach(e =>{e.addEventListener("mouseenter", ()=>{
+    var hz = e.querySelector("h1") 
+    gsap.to(hz,{
+        x:40,
+        opacity:0.6
+    });
+});
+})
+
+Array.from(element).forEach(e =>{e.addEventListener("mouseleave", ()=>{
+    var hz = e.querySelector("h1") 
+    gsap.to(hz,{
+        x:0,
+        opacity:1
+    });
+});
+})
