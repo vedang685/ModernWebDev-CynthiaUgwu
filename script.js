@@ -3,6 +3,94 @@ const scroll = new LocomotiveScroll({
     smooth: true
 });
 
+let counter = 0;
+
+document.addEventListener("DOMContentLoaded", () => {
+    const mediaQuery = window.matchMedia("(max-width: 640px)");
+    const respMenu = document.querySelector("#responsiveMenu");
+
+
+    if (mediaQuery.matches) {
+        const menuButton = document.querySelector("#menuButton");
+        const closeButton = document.querySelector("#close");
+        
+        menuButton.addEventListener("click", () => {
+            if(counter == 0)
+            {
+                respMenu.classList.add("active");
+                gsap.from(respMenu, {
+                    top: "-100vh",
+                    duration: 0.8,
+                    scrub: 5
+                });
+                counter = counter+1;
+            }
+            else
+            {
+                menuButton.addEventListener("click", () => {
+                    respMenu.classList.add("active");
+                    gsap.to(respMenu, {
+                        top: 0,
+                        duration: 0.8,
+                    });
+                });
+                counter = counter+1
+            }
+            if(counter!=2)
+            {
+                gsap.from("#nav2 h1",{
+                    y: "-10",
+                    opacity:0,
+                    delay: 0.8
+                })
+                gsap.from("#menuContent h1",{
+                    y: "-20",
+                    opacity:0,
+                    duration: 0.8,
+                    delay: 0.5
+                })
+            }
+        });
+        
+        closeButton.addEventListener("click", () => {
+            gsap.to("#nav2 h1",{
+                y: '-20',
+                opacity:0,
+                duration: 0.5,
+                onComplete: ()=>{
+                    gsap.to("#nav2 h1",{
+                        y: '0',
+                        opacity:1,
+                        duration: 0.1,
+                    })
+                }
+            })
+            gsap.to("#menuContent h1",{
+                y: '-20',
+                opacity:0,
+                duration: 0.6,
+                onComplete: ()=>{
+                    gsap.to("#menuContent h1",{
+                        y: '0',
+                        opacity:1,
+                        duration: 0.1,
+                    })
+                }
+            })
+
+            gsap.to(respMenu, {
+                top: "-100vh",
+                duration: 0.5,
+                delay:0.3,
+                onComplete: () => {
+                    respMenu.classList.remove("active");
+                },
+            });
+        });
+    }
+});
+
+
 function landingPage(){
     var t1 = gsap.timeline();
 
@@ -17,7 +105,7 @@ function landingPage(){
         ease: Expo.easeInOut,
         delay: -1,
         duration: 1.5,
-        stagger: .2
+        stagger: .4
     })
     .from("#footer",{
         y: -10,
@@ -97,21 +185,26 @@ document.querySelectorAll(".elements").forEach((elem)=>{
     });
 });
 
-document.addEventListener("DOMContentLoaded", ()=>{
-    var menuButton = document.getElementById("menuButton");
-    var menuLinks = document.getElementById("menuLinks");
+document.addEventListener("DOMContentLoaded", () => {
+    const mediaQuery = window.matchMedia("(min-width: 640px)");
 
-    menuButton.addEventListener("click", ()=>{
-        menuButton.classList.toggle("active");
-        setTimeout(()=>{
-            menuLinks.classList.toggle("active"); 
-            setTimeout(()=>{
-                menuButton.style.opacity="0";
-            },500);
-            
-        }, 500);
-    });
+    if (mediaQuery.matches) {
+        var menuButton = document.getElementById("menuButton");
+        var menuLinks = document.getElementById("menuLinks");
+
+        menuButton.addEventListener("click", () => {
+            menuButton.classList.toggle("active");
+            setTimeout(() => {
+                menuLinks.classList.toggle("active");
+                setTimeout(() => {
+                    menuButton.style.opacity = "0";
+                }, 500);
+
+            }, 500);
+        });
+    }
 });
+
 
 function updateCurrentTime() {
     const currentTimeElement = document.getElementById("currentTime");
@@ -133,26 +226,6 @@ document.addEventListener("DOMContentLoaded", function() {
     updateCurrentTime();
 });
 
-
 skewcircle();
 circleMouseFollower();
 landingPage();
-
-var element = document.getElementsByClassName("elements")
-Array.from(element).forEach(e =>{e.addEventListener("mouseenter", ()=>{
-    var hz = e.querySelector("h1") 
-    gsap.to(hz,{
-        x:40,
-        opacity:0.6
-    });
-});
-})
-
-Array.from(element).forEach(e =>{e.addEventListener("mouseleave", ()=>{
-    var hz = e.querySelector("h1") 
-    gsap.to(hz,{
-        x:0,
-        opacity:1
-    });
-});
-})

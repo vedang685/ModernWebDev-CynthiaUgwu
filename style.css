@@ -1,5 +1,4 @@
 *{
-    
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -9,6 +8,11 @@ html,body{
     width: 100%;
     height: 100%;
 }
+
+#responsiveMenu{
+    display: none;
+}
+
 #minCircle{
     transition: all cubic-bezier(0.19, 1, 0.22, 1) 1s;
     width: 12px;
@@ -30,7 +34,6 @@ html,body{
     position: relative;
 }
 #nav{
-    position: sticky;
     top: 0px;
     background-color: #000;
     display: flex;
@@ -72,7 +75,7 @@ html,body{
 .availability{
     color: #fff;
     font-size: 1.8vw;
-    margin-top: 80px;
+    margin-top: 10vh;
     text-align: right;
     text-transform: uppercase;
     line-height: 2;
@@ -272,6 +275,12 @@ html,body{
     transform: translateY(115%);
 }
 
+.elements:hover h1 {
+    transform: translateX(20px);
+    opacity: 0.3;
+    transition: transform 0.3s ease-in, opacity 0.3s ease-in;
+}
+
 #menuButton{
     cursor: pointer;
     display: inline-block;
@@ -284,7 +293,7 @@ html,body{
     content: "";
     display: block;
     position: absolute;
-    bottom: -4px; /* Adjust the value as needed */
+    bottom: -4px;
     left: 0px;
     width: 100%;
     height: 2px;
@@ -302,7 +311,7 @@ html,body{
     content: "";
     display: block;
     position: absolute;
-    bottom: -4px; /* Adjust the value as needed */
+    bottom: -4px;
     left: 10px;
     width: 100%;
     height: 2px;
@@ -333,3 +342,206 @@ html,body{
     padding-left: 15px;
 }
 
+@media (max-width: 440px) {
+    #bit{
+        margin-left: 0vw;
+    }
+    #bit h5{
+        padding: 0px 17px ;
+    }
+    #designer h1{
+        margin-left: 11px;
+    }
+}
+
+@media (max-width: 640px) {
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'General Sans', sans-serif;
+    }
+    html,body{
+        width: 100%;
+        height: 100%;
+    }
+    #about a{
+        padding: 4px 7px;
+        font-size: 8px;
+    }
+    #about h5{
+        margin-bottom: 15px;
+    }
+    #minCircle{
+        display: none;
+    }
+    html,body{
+        width: 100%;
+        height: 100%;
+    }
+    #heading h1{
+        font-size: 70px;
+        margin-left: 3.5vw;
+    }
+    #designer h1{
+        font-size: 70px;
+    }
+    #bit h5{
+        font-family: 'General Sans', sans-serif;
+        font-weight: 400;
+        font-size: 12px;
+    }
+    #footer a{
+        font-size: 10px
+    }
+    #footer .circle{
+        width: 20px;
+        height: 20px;
+    }
+    .availability h5{
+        font-family: 'General Sans', sans-serif;
+        font-weight: 400;
+        font-size: 11px;
+        margin-top: 18vh;
+    }
+    .availability2 h5{
+        font-family: 'General Sans', sans-serif;
+        font-weight: 400;
+        font-size: 11px;
+    }
+    #secondPage{
+        height: 100vw;
+        padding-left: 5vw;
+        padding-top: 100px;
+    }
+    #about {
+        gap:35px;
+        flex-direction: column;
+        text-align: center;
+        padding-left: 10vw;
+    }
+    #about img{
+        width: 150px;
+        height: auto;
+        margin: 0 auto;
+    }
+    #about p{
+        text-align: left;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        font-size: 12px;
+        margin-bottom: 20px;
+        padding-left: 2vw;
+    }
+    #content{
+        width: 100%;
+        padding: 0vw 0vw;
+    }
+    #youtube h3{
+        font-family: 'General Sans', sans-serif;
+        font-weight: 400;
+        font-size: 7px;
+    }
+    #youtube h5{
+        font-family: 'General Sans', sans-serif;
+        font-weight: 400;
+        font-size: 7px;
+    }
+    #footerLeft h5{
+        font-family: 'General Sans', sans-serif;
+        font-weight: 400;
+        font-size: 8px;
+    }
+    #footerRight a{
+        font-size: 8px;
+    }
+    .elements h1{
+        font-family: 'General Sans', sans-serif;
+        font-size: 35px;
+        font-weight: 600;
+    }
+    .elements h5{
+        font-family: 'General Sans', sans-serif;
+        font-size: 12px;
+        font-weight: 300;
+    }
+    #nav a{
+        font-family: 'General Sans', sans-serif;
+        font-size: 12px;
+        font-weight: 300;
+    }
+    #nav h4{
+        font-family: 'General Sans', sans-serif;
+        font-size: 12px;
+        font-weight: 300;
+    }
+
+
+    #responsiveMenu.active{
+        display: block;
+        z-index: 999;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+    }
+    #nav2{
+        height: 20vw;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0vw 4vw;
+        border-bottom: 1px solid #a3a3a3;
+    }
+    #nav2 h1{
+        color: #fff;
+        font-family: 'General Sans', sans-serif;
+        font-size: 12px;
+        font-weight: 300;
+    }
+    #nav2 #close{
+        font-size: 16px;
+        text-transform: uppercase;
+    }
+    #menuContent{
+        height: 80vh;
+        padding: 10vw 5vw;
+    }
+    #menuContent h1{
+        color: #a3a3a3;
+        font-size: 50px;
+        font-weight: 550;
+        font-family: 'General Sans', sans-serif;
+        line-height: 25vw;
+    }
+    #menuFooter{
+        border-top: 1px solid #a3a3a3;
+        padding: 0vw 4vw;
+        height: 20vw;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    #menuFooter h1{
+        color: #fff;
+        font-family: 'General Sans', sans-serif;
+        font-size: 10px;
+        font-weight: 300;
+    }
+}
+@media (max-height:740px){
+    #menuContent h1{
+        line-height: 23.5vw;
+    }
+}
+@media (max-height:680px){
+    #menuContent h1{
+        font-size: 40px;
+        line-height: 19vw;
+    }
+    #menuFooter{
+        padding-bottom: 5vw;
+    }
+}
