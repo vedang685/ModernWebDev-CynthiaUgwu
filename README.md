@@ -38,7 +38,7 @@ Immerse users in an interactive wonderland as text transitions enchantingly and 
 
 Play the video below for preview:
 
-https://github.com/vedang685/ModernWebDev-CynthiaUgwu/assets/93223467/ee964294-a6c9-42cb-953b-35912660a9da
+https://github.com/vedang685/ModernWebDev-CynthiaUgwu/assets/93223467/9e1c9c20-f9af-4653-9a62-cd43a593b1eb
 
 <li><B> Desktop/Laptops </B></li>
 
