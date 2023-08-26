@@ -158,32 +158,40 @@ function circleMouseFollower(xscale, yscale){
     })
 }
 
-document.querySelectorAll(".elements").forEach((elem)=>{
-    var rotate = 0;
-    var diff = 0;
+document.addEventListener("DOMContentLoaded", () => {
+    const mediaQuery = window.matchMedia("(min-width: 640px)");
 
-    elem.addEventListener("mouseleave",(e)=>{
-        gsap.to(elem.querySelector("img"), {
-            opacity: 0,
-            ease: Power3,
-        })
-    });
-
-    elem.addEventListener("mousemove",(e)=>{
-
-        var pos = e.clientY - elem.getBoundingClientRect().top;
-        diff = e.clientX - rotate;
-        rotate = e.clientX;
-        var value = gsap.utils.clamp(-20,20,diff*0.5);
-        gsap.to(elem.querySelector("img"), {
-            opacity: 1,
-            ease: Power3,
-            top: pos,
-            left: e.clientX,
-            rotate: value,
-        })
-    });
+    if (mediaQuery.matches) {
+        document.querySelectorAll(".elements").forEach((elem)=>{
+            var rotate = 0;
+            var diff = 0;
+        
+            elem.addEventListener("mouseleave",(e)=>{
+                gsap.to(elem.querySelector("img"), {
+                    opacity: 0,
+                    ease: Power3,
+                })
+            });
+        
+            elem.addEventListener("mousemove",(e)=>{
+        
+                var pos = e.clientY - elem.getBoundingClientRect().top;
+                diff = e.clientX - rotate;
+                rotate = e.clientX;
+                var value = gsap.utils.clamp(-20,20,diff*0.5);
+                gsap.to(elem.querySelector("img"), {
+                    opacity: 1,
+                    ease: Power3,
+                    top: pos,
+                    left: e.clientX,
+                    rotate: value,
+                })
+            });
+        });
+    }
 });
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
     const mediaQuery = window.matchMedia("(min-width: 640px)");
@@ -219,12 +227,40 @@ function updateCurrentTime() {
 
     currentTimeElement.textContent = `${formattedHours}:${formattedMinutes} ${ampm} EST`;
 
-    setTimeout(updateCurrentTime, 1000); // Update every 1 second
+    setTimeout(updateCurrentTime, 1000);
 }
 
 document.addEventListener("DOMContentLoaded", function() {
     updateCurrentTime();
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const mediaQuery = window.matchMedia("(max-width: 640px)");
+
+    if (mediaQuery.matches) {
+        gsap.from("#secondPage h1",{
+            x: "-20",
+            opacity:0,
+            duration: 1,
+            scrollTrigger:{
+                trigger: "#secondPage h1",
+                scroller:"body",
+            }
+        })
+        gsap.from("#about img, #about p, #about h5, #about a",{
+            x: "-20",
+            opacity:0,
+            duration: 3,
+            scrollTrigger:{
+                trigger: "#about",
+                scroller:"body",
+                delay: 2,
+            }
+        })
+    }
+});
+
+
 
 skewcircle();
 circleMouseFollower();
