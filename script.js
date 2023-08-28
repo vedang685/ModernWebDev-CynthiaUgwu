@@ -27,12 +27,10 @@ document.addEventListener("DOMContentLoaded", () => {
             }
             else
             {
-                menuButton.addEventListener("click", () => {
-                    respMenu.classList.add("active");
-                    gsap.to(respMenu, {
-                        top: 0,
-                        duration: 0.8,
-                    });
+                respMenu.classList.add("active");
+                gsap.to(respMenu, {
+                    top: 0,
+                    duration: 0.8,
                 });
                 counter = counter+1
             }
